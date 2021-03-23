@@ -1,0 +1,7 @@
+<h1>All Offices</h1>
+
+<% @offices.each do |office| %>
+  <h2><%= office.name %></h2>
+  <p>Capacity: <%= office.capacity %></p>
+  <p>First Aid Available: <%= office.first_aid %></p>
+<% end %>

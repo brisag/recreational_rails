@@ -1,0 +1,7 @@
+<h1>All Parks</h1>
+
+<% @parks.each do |park| %>
+  <h2>Name: <%= park.name %></h2>
+  <p>Capacity: <%= park.capacity %></p>
+  <p>Permit Required? <%= park.permit_required %></p>
+<% end %>

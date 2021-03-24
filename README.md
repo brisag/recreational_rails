@@ -14,7 +14,7 @@
 This project is ...
 
 ## Database Schema
-![Diagram](https://github.com/brisag/recreational_rails/images/diagram.png "Database Schema")
+![Diagram](https://github.com/brisag/recreational_rails/blob/main/images/diagram.png "Database Schema")
 
 ## Learning Goals / Areas of Focus
 * ???

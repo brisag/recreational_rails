@@ -1,2 +1,4 @@
 class Park < ApplicationRecord
-end 
+  has_many :programs
+
+end

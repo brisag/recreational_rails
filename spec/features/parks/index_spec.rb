@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe "As a visitor", type: :feature do
   describe "When I visit the Parks index" do
     before :each do
-      @grand_canyon = Park.create(name: 'GRCA Park', capacity: 30, permit_required: false )
-      @sand_dunes= Park.create(name: 'Sand Dunes', capacity: 25, permit_required: false )
-      @crater_lake= Park.create(name: 'Sand Dunes', capacity: 25, permit_required: false )
+      @grand_canyon = Park.create!(name: 'GRCA Park', capacity: 30, permit_required: false )
+      @sand_dunes= Park.create!(name: 'Sand Dunes', capacity: 25, permit_required: false )
+      @crater_lake= Park.create!(name: 'Sand Dunes', capacity: 25, permit_required: false )
 
     end
 

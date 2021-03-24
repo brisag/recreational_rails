@@ -1,6 +1,6 @@
 class OfficesController < ApplicationController
   def index
-    @offices = Office.all
+    @offices = Office.order_created_at
   end
 
   def show

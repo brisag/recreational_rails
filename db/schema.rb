@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2021_03_23_012352) do
     t.string "name"
     t.integer "capacity"
     t.boolean "permit_required"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "programs", force: :cascade do |t|

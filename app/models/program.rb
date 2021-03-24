@@ -1,2 +1,4 @@
 class Program < ApplicationRecord
-end 
+  belongs_to :park
+
+end

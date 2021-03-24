@@ -1,2 +1,3 @@
 class Trail < ApplicationRecord
-end 
+  belongs_to :office 
+end

@@ -1,7 +1,9 @@
 <h1>All Trails</h1>
 
-<% @trails.each do |trail| %>
+<section id="trails">
+  <% @trails.each do |trail| %>
   <h2><%= trail.name %></h2>
   <p>Elevation Gain (feet): <%= trail.elevation %></p>
   <p>Dogs Allowed? <%= trail.dogs_allowed %></p>
-<% end %>
+  <% end %>
+</section>

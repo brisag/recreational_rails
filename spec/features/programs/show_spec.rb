@@ -12,7 +12,7 @@ RSpec.describe "As a visitor", type: :feature do
     it "Then I see the program with that id including the program's attributes" do
       visit "/programs/#{@fishing.id}"
 
-      save_and_open_page
+      # save_and_open_page
 
       expect(page).to have_content("Programs")
       # within('#activity') do
@@ -20,3 +20,6 @@ RSpec.describe "As a visitor", type: :feature do
         expect(page).to have_content(@fishing.num_of_participants)
         expect(page).to have_content(@fishing.virtual)
       # end
+    end
+  end 
+end

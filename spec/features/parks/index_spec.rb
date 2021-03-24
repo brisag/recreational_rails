@@ -12,7 +12,7 @@ RSpec.describe "As a visitor", type: :feature do
     it "Then I see the names of each office record in the system" do
       visit '/parks'
 
-      save_and_open_page
+      # save_and_open_page
 
       expect(page).to have_content(@grand_canyon.name)
       expect(page).to have_content(@sand_dunes.name)

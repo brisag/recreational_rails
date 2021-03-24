@@ -12,7 +12,7 @@ RSpec.describe "As a visitor", type: :feature do
     it "Then I see each program in the system including its attributes" do
       visit '/programs'
 
-      save_and_open_page
+      # save_and_open_page
 
       expect(page).to have_content("All Programs")
       within('#activity') do

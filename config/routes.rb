@@ -14,4 +14,7 @@ Rails.application.routes.draw do
 
   get '/programs', to: 'programs#index'
   get '/programs/:id', to: 'programs#show'
+
+  get '/offices/:id/trails', to: 'trails#index'
+  get '/parks/:id/programs', to: 'programs#index'
 end

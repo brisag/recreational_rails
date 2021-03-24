@@ -12,7 +12,7 @@ RSpec.describe "As a visitor", type: :feature do
     it "Then I see the park with that id including the its attributes" do
       visit "/parks/#{@grand_canyon.id}"
 
-      save_and_open_page
+      # save_and_open_page
 
       expect(page).to have_content(@grand_canyon.name)
       expect(page).to have_content(@grand_canyon.capacity)

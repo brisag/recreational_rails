@@ -14,12 +14,12 @@ RSpec.describe "As a visitor", type: :feature do
 
       # save_and_open_page
 
-      expect(page).to have_content("Programs")
+      expect(page).to have_content("Program")
       # within('#activity') do
         expect(page).to have_content(@fishing.name)
         expect(page).to have_content(@fishing.num_of_participants)
         expect(page).to have_content(@fishing.virtual)
       # end
     end
-  end 
+  end
 end

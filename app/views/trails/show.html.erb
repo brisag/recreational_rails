@@ -1,4 +1,9 @@
-<a href="/trails/#{@trail.id}">Trail</a>
+<header>
+  <nav>
+    <%= link_to "All Backcountry Offices", "/offices" %>
+    <%= link_to "All Trails", "/trails" %>
+  </nav>
+</header>
 
 <h1><%= @trail.name %></h1>
 

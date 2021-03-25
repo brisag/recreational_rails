@@ -1,4 +1,9 @@
-<h1>All Trails</h1>
+<header>
+  <nav>
+    <%= link_to "All Backcountry Offices", "/offices" %>
+    <%= link_to "All Trails", "/trails" %>
+  </nav>
+</header>
 
 <section id="trails">
   <% @trails.each do |trail| %>

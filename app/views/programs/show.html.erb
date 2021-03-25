@@ -1,6 +1,11 @@
-<a href="/programs/#{@program.id}">Program</a>
+<header>
+  <nav>
+    <%= link_to "All Parks", "/parks" %>
+    <%= link_to "All Programs", "/programs" %>
+  </nav>
+</header>
 
 <h1><%= @program.name %></h1>
 
 <p>Number of Participants: <%= @program.num_of_participants %></p>
-<p>Virtual? <%= @program.virtual %></p>
+<p>Virtual? <%= @program.virtual %></p><br>

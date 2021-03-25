@@ -1,0 +1,10 @@
+<%= form_with url: '/parks', method: :post, local: true do |form|%>
+<h3><%= form.label "Create new Park:" %></h3><br>
+<%= form.label :name %>
+<%= form.text_field :name %><br>
+<%= form.label :capacity %>
+<%= form.text_field :capacity %><br>
+<%= form.label :permit_required %>
+<%= form.check_box :permit_required %><br>
+<%= form.submit "Create Park" %>
+<% end %>

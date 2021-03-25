@@ -1,6 +1,7 @@
 <a href="/parks/#{@park.id}">Parks</a>
 
-<h1><%= @park.name %></h1>
+<h2>Number of programs offered: <%= @park.count_programs %>
 
+<h1><%= @park.name %></h1>
 <p>Capacity: <%= @park.capacity %></p>
 <p>Permit Required? <%= @park.permit_required %></p>

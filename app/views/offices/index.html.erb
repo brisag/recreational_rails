@@ -1,4 +1,11 @@
-<h1>All Offices</h1>
+<header>
+  <nav>
+    <%= link_to "All Backcountry Offices", "/offices" %>
+    <%= link_to "All Trails", "/trails" %>
+  </nav>
+</header>
+
+<h1>All Backcountry Offices</h1>
 
 <% @offices.each do |office| %>
   <h2><%= office.name %></h2>

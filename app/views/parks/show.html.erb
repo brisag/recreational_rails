@@ -11,4 +11,4 @@
 <p>Capacity: <%= @park.capacity %></p>
 <p>Permit Required? <%= @park.permit_required %></p>
 
-<p><%= link_to "View Programs", "/parks/#{@park.id}/programs" %></p>
+<p><%= link_to "View Programs", park_programs_path(@park) %></p>

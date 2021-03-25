@@ -21,6 +21,18 @@ class OfficesController < ApplicationController
       redirect_to '/offices'
   end
 
+  def edit
+    @office = Office.find(params[:id])
+  end
+
+  def update
+    office = Office.find(params[:id])
+    office.update(office_params)
+
+    office.save
+    redirect_to "/offices/#{office.id}"
+  end
+
   private
 
   def office_params

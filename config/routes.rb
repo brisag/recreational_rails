@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   get '/offices/new', to: 'offices#new'
   post '/offices', to: 'offices#create'
   get '/offices/:id', to: 'offices#show'
-
-
+  get '/offices/:id/edit', to: 'offices#edit'
+  patch '/offices/:id', to: 'offices#update'
 
   get '/trails', to: 'trails#index'
   get '/trails/:id', to: 'trails#show'
@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get '/parks/new', to: 'parks#new'
   post '/parks', to: 'parks#create'
   get '/parks/:id', to: 'parks#show'
+  get '/parks/:id/edit', to: 'parks#edit'
+  patch '/parks/:id', to: 'parks#update'
 
   get '/programs', to: 'programs#index'
   get '/programs/:id', to: 'programs#show'

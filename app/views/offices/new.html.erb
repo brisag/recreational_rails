@@ -1,0 +1,10 @@
+<%= form_with url: '/offices', method: :post, local: true do |form|%>
+<h3><%= form.label "Create new Back Country Office:" %></h3><br>
+<%= form.label :name %>
+<%= form.text_field :name %><br>
+<%= form.label :capacity %>
+<%= form.text_field :capacity %><br>
+<%= form.label :first_aid %>
+<%= form.check_box :first_aid %><br>
+<%= form.submit "Create Office" %>
+<% end %>

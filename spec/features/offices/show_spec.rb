@@ -16,5 +16,12 @@ RSpec.describe "As a visitor", type: :feature do
       expect(page).to have_content(@rmnp_office.capacity)
       expect(page).to have_content(@rmnp_office.first_aid)
     end
+
+    it "has a link to update BackCountry Office" do
+      visit "/offices/#{@rmnp_office.id}"
+      expect(page).to have_link("Update BackCountry Office")
+      click_link "Update BackCountry Office"
+      expect(current_path).to eq("/offices/#{@rmnp_office.id}/edit")
+    end
   end
 end

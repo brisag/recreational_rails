@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get '/trails/:id', to: 'trails#show'
 
   get '/parks', to: 'parks#index'
+  get '/parks/new', to: 'parks#new'
+  post '/parks', to: 'parks#create'
   get '/parks/:id', to: 'parks#show'
 
   get '/programs', to: 'programs#index'

@@ -17,5 +17,12 @@ RSpec.describe "As a visitor,", type: :feature do
       expect(page).to have_content(@moab_office.name)
       expect(page).to have_content(@zion_office.name)
     end
+
+    it "has a link to create new Office" do
+      visit "/offices"
+      expect(page).to have_link("New BackCountry Office")
+      click_link "New BackCountry Office"
+      expect(current_path).to eq("/offices/new")
+    end
   end
 end

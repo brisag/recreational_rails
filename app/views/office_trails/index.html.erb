@@ -1,0 +1,13 @@
+<header>
+  <nav>
+    <%= link_to "All Backcountry Offices", "/offices" %>
+    <%= link_to "All Trails", "/trails" %>
+  </nav>
+</header>
+
+<h1><%= link_to "#{@office.name}", "/offices/#{@office.id}" %>'s Trails</h1>
+<% @office.trails.each do |trail| %>
+<h3>Trail Name: <%= "#{trail.name}" %></h3>
+  Elevation: <%= trail.elevation %><br>
+  Dogs allowed? <%= trail.dogs_allowed %><br>
+<% end %>

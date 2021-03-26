@@ -23,6 +23,6 @@ Rails.application.routes.draw do
   get '/programs', to: 'programs#index'
   get '/programs/:id', to: 'programs#show'
 
-  get '/offices/:id/trails', to: 'offices#index', as: 'office_trails'
-  get '/parks/:id/programs', to: 'programs#index', as: 'park_programs'
+  get '/offices/:id/trails', to: 'office_trails#index'
+  get '/parks/:id/programs', to: 'park_programs#index'
 end

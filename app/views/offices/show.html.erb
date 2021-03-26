@@ -10,6 +10,8 @@
 <p>Capacity: <%= @office.capacity %></p>
 <p>First Aid Available: <%= @office.first_aid %></p><br>
 
+<h4>Number of trails in this Office: <%= @office.count_trails %></h4>
+
 <p><%= link_to "View Trails", "/offices/#{@office.id}/trails" %></p>
 <br>
 <p><%= link_to "Update BackCountry Office", "/offices/#{@office.id}/edit" %></p>

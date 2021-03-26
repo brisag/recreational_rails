@@ -5,10 +5,10 @@
   </nav>
 </header>
 
-<h2>Number of programs offered: <%= @park.count_programs %>
 
 <h1><%= @park.name %></h1>
 <p>Capacity: <%= @park.capacity %></p>
 <p>Permit Required? <%= @park.permit_required %></p>
 
-<p><%= link_to "View Programs", park_programs_path(@park) %></p>
+<h4>Number of programs offered: <%= @park.count_programs %></h4>
+<p><%= link_to "View Programs", "/parks/#{@park.id}/programs"  %></p>

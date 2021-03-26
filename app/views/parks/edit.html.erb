@@ -1,0 +1,10 @@
+<%= form_with url: "/parks/#{@park.id}", method: :patch, local: true do |form|%>
+<h3><%= form.label "Update Park:" %></h3><br>
+<%= form.label :name %>
+<%= form.text_field :name %><br>
+<%= form.label :capacity %>
+<%= form.text_field :capacity %><br>
+<%= form.label :permit_required %>
+<%= form.check_box :permit_required %><br>
+<%= form.submit "Update Park" %>
+<% end %>

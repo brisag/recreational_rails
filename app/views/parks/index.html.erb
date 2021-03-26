@@ -8,7 +8,7 @@
 <h1>All Parks</h1>
 
 <% @parks.each do |park| %>
-  <h2>Name: <%= park.name %></h2>
+  <h2><a href="/parks/<%= park.id %>">Name: <%= park.name %></a></h2>
   <p>Capacity: <%= park.capacity %></p>
   <p>Permit Required? <%= park.permit_required %></p>
   <p>Created At: <%= park.created_at%></p>

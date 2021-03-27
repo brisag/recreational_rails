@@ -23,9 +23,14 @@ Rails.application.routes.draw do
   get '/programs', to: 'programs#index'
   get '/programs/:id', to: 'programs#show'
 
+  #parent_child
   get '/offices/:id/trails', to: 'office_trails#index'
-  get '/parks/:id/programs', to: 'park_programs#index'
-
   get '/offices/:id/trails/new', to: 'office_trails#new'
   post '/offices/:id/trails', to: 'office_trails#create'
+
+  #parent_child
+  get '/parks/:id/programs', to: 'park_programs#index'
+  get '/parks/:id/programs/new', to: 'park_programs#new'
+  post '/parks/:id/programs', to: 'park_programs#create'
+
 end

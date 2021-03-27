@@ -25,4 +25,7 @@ Rails.application.routes.draw do
 
   get '/offices/:id/trails', to: 'office_trails#index'
   get '/parks/:id/programs', to: 'park_programs#index'
+
+  get '/offices/:id/trails/new', to: 'office_trails#new'
+  post '/offices/:id/trails', to: 'office_trails#create'
 end

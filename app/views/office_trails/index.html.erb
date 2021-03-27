@@ -11,3 +11,5 @@
   Elevation: <%= trail.elevation %><br>
   Dogs allowed? <%= trail.dogs_allowed %><br>
 <% end %>
+
+<p><%= link_to "Create Trail", "/offices/#{@office.id}/trails/new" %></p>

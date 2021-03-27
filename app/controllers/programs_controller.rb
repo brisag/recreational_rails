@@ -1,6 +1,6 @@
 class ProgramsController < ApplicationController
   def index
-    @programs = Program.all
+    @programs = Program.all.true_virtual_records
   end
 
   def show

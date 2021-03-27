@@ -12,14 +12,14 @@ RSpec.describe "As a visitor", type: :feature do
 
       fill_in "Name", with: "Longs Peak"
       fill_in "Elevation", with: "4855"
-      # check "Dogs Allowed?"
+      # check("Dogs Allowed?", allow_label_click: true)
 
       click_on "Create Trail"
 
       expect(current_path).to eq("/offices/#{@rmnp_office.id}/trails")
       expect(page).to have_content("Longs Peak")
       expect(page).to have_content(4855)
-      # expect(page).to have_content(false)
+      # expect(page).to have_checked_field("Dogs Allowed?")
     end
   end
 end

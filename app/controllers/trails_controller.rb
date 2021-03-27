@@ -1,6 +1,6 @@
 class TrailsController < ApplicationController
   def index
-    @trails = Trail.all
+    @trails = Trail.all.true_dogs_allowed
   end
 
   def show

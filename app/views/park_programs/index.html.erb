@@ -6,6 +6,7 @@
 </header>
 
 <h1><%= link_to "#{@park.name}", "parks/#{@park.id}" %>'s Programs</h1>
+
 <% @park.programs.each do |program| %>
   <h3>Program Name: <%= program.name %></h3>
   <p>Number of Participants: <%= program.num_of_participants %></p>

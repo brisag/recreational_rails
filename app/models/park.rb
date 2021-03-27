@@ -8,4 +8,8 @@ class Park < ApplicationRecord
   def count_programs
     programs.count
   end
+
+  def sort_abc_park_programs
+    programs.order(:name)
+  end
 end

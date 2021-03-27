@@ -19,5 +19,13 @@ RSpec.describe "As a visitor", type: :feature do
       expect(page).to have_content(@bear_lake.elevation)
       expect(page).to have_content(@bear_lake.dogs_allowed)
     end
+
+    it "Shows a link to update Program and am redirected to update form." do
+      visit "/trails/#{@bear_lake.id}"
+
+      expect(page).to have_link("Update Trail")
+      click_link "Update Trail"
+      expect(current_path).to eq("/trails/#{@bear_lake.id}/edit")
+    end
   end
 end

@@ -9,3 +9,5 @@
 
 <p>Number of Participants: <%= @program.num_of_participants %></p>
 <p>Virtual? <%= @program.virtual %></p><br>
+
+<p><%= link_to "Update Program", "/programs/#{@program.id}/edit"%></p>

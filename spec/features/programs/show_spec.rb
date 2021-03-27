@@ -21,5 +21,12 @@ RSpec.describe "As a visitor", type: :feature do
         expect(page).to have_content(@fishing.virtual)
       # end
     end
+
+    it "And I see a link to update that Program and it takes me to a form" do
+      visit "/programs/#{@fishing.id}"
+      expect(page).to have_link("Update Program")
+      click_link "Update Program"
+      expect(current_path).to eq("/programs/#{@fishing.id}/edit")
+    end 
   end
 end

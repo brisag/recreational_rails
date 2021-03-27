@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get '/trails', to: 'trails#index'
   get '/trails/:id', to: 'trails#show'
+  get '/trails/:id/edit', to: 'trails#edit'
+  patch '/trails/:id', to: 'trails#update'
 
   get '/parks', to: 'parks#index'
   get '/parks/new', to: 'parks#new'
@@ -22,6 +24,8 @@ Rails.application.routes.draw do
 
   get '/programs', to: 'programs#index'
   get '/programs/:id', to: 'programs#show'
+  get '/programs/:id/edit', to: 'programs#edit'
+  patch '/programs/:id', to: 'programs#update'
 
   #parent_child
   get '/offices/:id/trails', to: 'office_trails#index'

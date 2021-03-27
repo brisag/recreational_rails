@@ -1,0 +1,10 @@
+<%= form_with url: "/programs/#{@program.id}", method: :patch, local: true do |form|%>
+<h3><%= form.label "Update Program:" %></h3><br>
+<%= form.label :name %>
+<%= form.text_field :name %><br>
+<%= form.label :num_of_participants, "Number of Participants" %>
+<%= form.text_field :num_of_participants %><br>
+<%= form.label :virtual %>
+<%= form.check_box :virtual %><br>
+<%= form.submit "Update Program" %>
+<% end %>

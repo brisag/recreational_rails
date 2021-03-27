@@ -11,3 +11,5 @@
   <p>Number of Participants: <%= program.num_of_participants %></p>
   <p>Virtual Program? <%= program.virtual %></p>
 <% end %>
+
+<p><%= link_to "Create Program", "/parks/#{@park.id}/programs/new" %></p>

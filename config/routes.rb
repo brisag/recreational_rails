@@ -31,10 +31,12 @@ Rails.application.routes.draw do
   get '/offices/:id/trails', to: 'office_trails#index'
   get '/offices/:id/trails/new', to: 'office_trails#new'
   post '/offices/:id/trails', to: 'office_trails#create'
+  get '/offices/:id/trails_abc', to: 'office_trails#index_abc'
 
   #parent_child
   get '/parks/:id/programs', to: 'park_programs#index'
   get '/parks/:id/programs/new', to: 'park_programs#new'
   post '/parks/:id/programs', to: 'park_programs#create'
+  get '/parks/:id/programs_abc', to: 'park_programs#index_abc'
 
 end

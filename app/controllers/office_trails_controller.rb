@@ -3,6 +3,10 @@ class OfficeTrailsController < ApplicationController
     @office = Office.find(params[:id])
   end
 
+  def index_abc
+    @office = Office.find(params[:id])
+  end
+
   def new
     @office = Office.find(params[:id])
   end

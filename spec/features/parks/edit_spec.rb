@@ -9,14 +9,14 @@ RSpec.describe "As a visitor", type: :feature do
 
       fill_in "Name", with: "Little Canyon"
       fill_in "Capacity", with: "44"
-      # check "First Aid"
+      check "Permit Required?"
 
       click_on "Update Park"
 
       expect(current_path).to eq("/parks/#{@grand_canyon.id}")
       expect(page).to have_content("Little Canyon")
       expect(page).to have_content(44)
-      # expect(page).to have_content(false)
+      expect(page).to have_content ('Permit Required: true')
     end
   end
 end

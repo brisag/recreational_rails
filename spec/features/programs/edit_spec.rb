@@ -10,14 +10,14 @@ RSpec.describe "As a visitor", type: :feature do
 
       fill_in "Name", with: "Trail Running"
       fill_in "Number of Participants", with: "5"
-      # check "Virtual"
+      uncheck "Virtual"
 
       click_on "Update Program"
 
       expect(current_path).to eq("/programs/#{@fishing.id}")
       expect(page).to have_content("Trail Running")
       expect(page).to have_content(5)
-      # expect(page).to have_content(false)
+      expect(page).to have_content ('Virtual: false')
     end
   end
 end

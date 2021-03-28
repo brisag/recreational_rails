@@ -22,15 +22,15 @@ RSpec.describe "As a visitor", type: :feature do
       end
 
       within('#activity') do
-        expect(page).to have_content(@rafting.name)
-        expect(page).to have_content(@rafting.num_of_participants)
-        expect(page).to have_content(@rafting.virtual)
+        expect(page).to_not have_content(@rafting.name)
+        expect(page).to_not have_content(@rafting.num_of_participants)
+        expect(page).to_not have_content(@rafting.virtual)
       end
 
       within('#activity') do
-        expect(page).to have_content(@hiking.name)
-        expect(page).to have_content(@hiking.num_of_participants)
-        expect(page).to have_content(@hiking.virtual)
+        expect(page).to_not have_content(@hiking.name)
+        expect(page).to_not have_content(@hiking.num_of_participants)
+        expect(page).to_not have_content(@hiking.virtual)
       end
     end
   end

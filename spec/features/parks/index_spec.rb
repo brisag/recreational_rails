@@ -7,10 +7,11 @@ RSpec.describe "As a visitor", type: :feature do
       @sand_dunes= Park.create!(name: 'Sand Dunes', capacity: 25, permit_required: false )
       @crater_lake= Park.create!(name: 'Sand Dunes', capacity: 25, permit_required: false )
 
+      visit '/parks'
     end
 
     it "Then I see the names of each office record in the system" do
-      visit '/parks'
+      # visit '/parks'
 
       # save_and_open_page
 
@@ -21,10 +22,18 @@ RSpec.describe "As a visitor", type: :feature do
     end
 
     it "has a link to create new Park" do
-      visit "/parks"
+      # visit "/parks"
       expect(page).to have_link("New Park")
       click_link "New Park"
       expect(current_path).to eq("/parks/new")
+    end
+
+    it "Next to every park, I see a link to edit park " do
+      within("#park-#{@sand_dunes.id}") do
+        expect(page).to have_link("Update Park")
+        click_link "Update Park"
+        expect(current_path).to eq("/parks/#{@sand_dunes.id}/edit")
+      end
     end
   end
 end

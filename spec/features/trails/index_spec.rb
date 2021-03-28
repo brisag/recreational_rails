@@ -15,22 +15,32 @@ RSpec.describe "As a visitor", type: :feature do
       # save_and_open_page
 
       expect(page).to have_content("All Trails")
-      within('#trails') do
+      within("#trail") do
         expect(page).to have_content(@bear_lake.name)
         expect(page).to have_content(@bear_lake.elevation)
         expect(page).to have_content(@bear_lake.dogs_allowed)
       end
 
-      within('#trails') do
+      within("#trail") do
         expect(page).to have_content(@dream_lake.name)
         expect(page).to have_content(@dream_lake.elevation)
         expect(page).to have_content(@dream_lake.dogs_allowed)
       end
 
-      within('#trails') do
+      within("#trail") do
         expect(page).to_not have_content(@flattop_mountain.name)
         expect(page).to_not have_content(@flattop_mountain.elevation)
         expect(page).to_not have_content(@flattop_mountain.dogs_allowed)
+      end
+    end
+
+    it "Next to every trail, I see a link to edit trail " do
+      visit '/trails'
+
+      within("#trail-#{@bear_lake.id}") do
+        expect(page).to have_link("Update")
+        click_link "Update"
+        expect(current_path).to eq("/trails/#{@bear_lake.id}/edit")
       end
     end
   end

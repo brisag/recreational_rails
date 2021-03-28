@@ -24,5 +24,15 @@ RSpec.describe "As a visitor,", type: :feature do
       click_link "New BackCountry Office"
       expect(current_path).to eq("/offices/new")
     end
+
+    it "Next to every park, I see a link to edit park " do
+      visit "/offices"
+
+      within("#office-#{@rmnp_office.id}") do
+        expect(page).to have_link("Update Office")
+        click_link "Update Office"
+        expect(current_path).to eq("/offices/#{@rmnp_office.id}/edit")
+      end
+    end
   end
 end

@@ -10,16 +10,16 @@
 @zion_office = Office.create!(name: 'Zion Office', capacity: 250, first_aid: true, created_at: "1990-08-13 14:45:55")
 
 @bear_lake = @rmnp_office.trails.create(name: 'Bear Lake Loop', elevation: 20, dogs_allowed: false)
-@dream_lake = @rmnp_office.trails.create(name: 'Dream Lake', elevation: 425, dogs_allowed: false)
+@dream_lake = @rmnp_office.trails.create(name: 'Dream Lake', elevation: 425, dogs_allowed: true)
 @flattop_mountain = @rmnp_office.trails.create(name: 'Flattop Mountain', elevation: 2849, dogs_allowed: false)
 
-@delicate_arch = @moab_office.trails.create(name: 'Delicate Arch', elevation: 480, dogs_allowed: false)
-@park_avenue = @moab_office.trails.create(name: 'Park Avenue', elevation: 320, dogs_allowed: false)
+@delicate_arch = @moab_office.trails.create(name: 'Delicate Arch', elevation: 480, dogs_allowed: true)
+@park_avenue = @moab_office.trails.create(name: 'Park Avenue', elevation: 320, dogs_allowed: true)
 @double_arch = @moab_office.trails.create(name: 'Double Arch', elevation: 0, dogs_allowed: false)
 
 @weeping_rock = @zion_office.trails.create(name: 'Weeping Rock', elevation: 98, dogs_allowed: false)
 @angels_landing = @zion_office.trails.create(name: 'Angels Landing', elevation: 1488, dogs_allowed: false)
-@the_narrows = @zion_office.trails.create(name: 'The Narrows', elevation: 344, dogs_allowed: false)
+@the_narrows = @zion_office.trails.create(name: 'The Narrows', elevation: 344, dogs_allowed: true)
 
 
 @grand_canyon = Park.create!(name: 'GRCA Park', capacity: 30, permit_required: false, created_at: "1918-04-13 14:45:55" )

@@ -33,5 +33,15 @@ RSpec.describe "As a visitor", type: :feature do
         expect(page).to_not have_content(@hiking.virtual)
       end
     end
+
+    it "Next to every program, I see a link to update " do
+      visit '/programs'
+
+      within("#program-#{@fishing.id}") do
+        expect(page).to have_link("Update")
+        click_link "Update"
+        expect(current_path).to eq("/programs/#{@fishing.id}/edit")
+      end
+    end
   end
 end

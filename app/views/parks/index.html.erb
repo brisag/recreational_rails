@@ -8,10 +8,14 @@
 <h1>All Parks</h1>
 
 <% @parks.each do |park| %>
-  <h2><a href="/parks/<%= park.id %>">Name: <%= park.name %></a></h2>
+<section id = "park-<%= park.id %>">
+  <h2><%= link_to "#{park.name}", "/parks/#{park.id}" %></h2>
   <p>Capacity: <%= park.capacity %></p>
   <p>Permit Required: <%= park.permit_required %></p>
   <p>Created At: <%= park.created_at%></p>
+  <%= link_to "Update Park", "/parks/#{park.id}/edit" %>
+</section>
+
 <% end %>
 
 <a href="/parks/new">New Park</a>

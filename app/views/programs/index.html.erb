@@ -9,8 +9,11 @@
 
 <section id="activity">
 <% @programs.each do |program| %>
+<section id = "program-<%= program.id %>">
     <h2>Name: <%= program.name %></h2>
     <p>Number of Participants: <%= program.num_of_participants %></p>
-    <p>Virtual Program? <%= program.virtual %></p> 
+    <p>Virtual Program? <%= program.virtual %></p>
+    <p><%= link_to 'Update', "/programs/#{program.id}/edit" %></p>
+  </section>
 <% end %>
 </section>

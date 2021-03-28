@@ -8,7 +8,7 @@
 
 <h1><%= @park.name %></h1>
 <p>Capacity: <%= @park.capacity %></p>
-<p>Permit Required? <%= @park.permit_required %></p>
+<p>Permit Required: <%= @park.permit_required %></p>
 
 <h4>Number of programs offered: <%= @park.count_programs %></h4>
 <p><%= link_to "View Programs", "/parks/#{@park.id}/programs"  %></p>

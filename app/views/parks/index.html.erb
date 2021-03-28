@@ -10,7 +10,7 @@
 <% @parks.each do |park| %>
   <h2><a href="/parks/<%= park.id %>">Name: <%= park.name %></a></h2>
   <p>Capacity: <%= park.capacity %></p>
-  <p>Permit Required? <%= park.permit_required %></p>
+  <p>Permit Required: <%= park.permit_required %></p>
   <p>Created At: <%= park.created_at%></p>
 <% end %>
 

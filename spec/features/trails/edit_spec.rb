@@ -10,14 +10,14 @@ RSpec.describe "As a visitor", type: :feature do
 
       fill_in "Name", with: "Lake of Glass"
       fill_in "Elevation", with: "1677"
-      # check "First Aid"
+      check "Dogs Allowed?"
 
       click_on "Update Trail"
 
       expect(current_path).to eq("/trails/#{@bear_lake.id}")
       expect(page).to have_content("Lake of Glass")
       expect(page).to have_content(1677)
-      # expect(page).to have_content(false)
+      expect(page).to have_content "Dogs Allowed? true"
     end
   end
 end

@@ -9,7 +9,7 @@
 <% @office.trails.each do |trail| %>
 <h3>Trail Name: <%= "#{trail.name}" %></h3><br>
   Elevation: <%= trail.elevation %><br>
-  Dogs allowed? <%= trail.dogs_allowed %><br>
+  Dogs Allowed? <%= trail.dogs_allowed %><br>
 <% end %>
 
 <p><%= link_to "Create Trail", "/offices/#{@office.id}/trails/new" %></p>

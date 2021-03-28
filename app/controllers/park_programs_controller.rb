@@ -3,6 +3,10 @@ class ParkProgramsController < ApplicationController
     @park = Park.find(params[:id])
   end
 
+  def index_abc
+    @park = Park.find(params[:id])
+  end
+
   def new
     @park = Park.find(params[:id])
   end

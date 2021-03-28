@@ -6,8 +6,7 @@
 </header>
 
 <h1><%= link_to "#{@park.name}", "parks/#{@park.id}" %>'s Programs</h1>
-<p><%= link_to "Sort Alphabetically", "/parks/#{@park.id}/programs_abc" %></p>
-<% @park.programs.each do |program| %>
+<% @park.order_programs_abc.each do |program| %>
   <h3>Program Name: <%= program.name %></h3>
   <p>Number of Participants: <%= program.num_of_participants %></p>
   <p>Virtual Program? <%= program.virtual %></p>

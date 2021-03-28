@@ -9,5 +9,7 @@ class Office < ApplicationRecord
     trails.count
   end
 
-
+  def order_abc
+    trails.order(name: :asc)
+  end 
 end

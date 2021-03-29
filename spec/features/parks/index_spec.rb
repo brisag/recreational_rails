@@ -11,10 +11,7 @@ RSpec.describe "As a visitor", type: :feature do
     end
 
     it "Then I see the names of each office record in the system" do
-      # visit '/parks'
-
       # save_and_open_page
-
       expect(page).to have_content(@grand_canyon.name)
       expect(page).to have_content(@sand_dunes.name)
       expect(page).to have_content(@crater_lake.name)
@@ -22,7 +19,6 @@ RSpec.describe "As a visitor", type: :feature do
     end
 
     it "has a link to create new Park" do
-      # visit "/parks"
       expect(page).to have_link("New Park")
       click_link "New Park"
       expect(current_path).to eq("/parks/new")

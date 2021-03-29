@@ -5,11 +5,10 @@ RSpec.describe "As a visitor", type: :feature do
     before :each do
       @rmnp_office = Office.create!(name: 'RMNP Office', capacity: 200, first_aid: true )
       @moab_office = Office.create!(name: 'Alamosa Office', capacity: 50, first_aid: false )
+      visit "/offices/#{@rmnp_office.id}"
     end
 
     it "Then I see the office with that id including the its attributes" do
-      visit "/offices/#{@rmnp_office.id}"
-
       # save_and_open_page
 
       expect(page).to have_content(@rmnp_office.name)
@@ -18,7 +17,6 @@ RSpec.describe "As a visitor", type: :feature do
     end
 
     it "has a link to update BackCountry Office" do
-      visit "/offices/#{@rmnp_office.id}"
       expect(page).to have_link("Update BackCountry Office")
       click_link "Update BackCountry Office"
       expect(current_path).to eq("/offices/#{@rmnp_office.id}/edit")

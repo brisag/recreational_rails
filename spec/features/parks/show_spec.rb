@@ -17,13 +17,8 @@ RSpec.describe "As a visitor", type: :feature do
       expect(page).to have_content(@grand_canyon.name)
       expect(page).to have_content(@grand_canyon.capacity)
       expect(page).to have_content(@grand_canyon.permit_required)
-      # expect(page).to have_content(@sand_dunes.name)
-      # expect(page).to have_content(@sand_dunes.capacity)
-      # expect(page).to have_content(@sand_dunes.permit_required)
-      # expect(page).to have_content(@crater_lake.name)
-      # expect(page).to have_content(@crater_lake.capacity)
-      # expect(page).to have_content(@crater_lake.permit_required)
     end
+
     it "has a link to update Park" do
       visit "/parks/#{@grand_canyon.id}"
       expect(page).to have_link("Update Park")

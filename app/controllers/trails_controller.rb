@@ -7,6 +7,11 @@ class TrailsController < ApplicationController
     @trail = Trail.find(params[:id])
   end
 
+  def destroy
+    Trail.destroy(params[:id])
+    redirect_to "/trails"
+  end
+
   def edit
     @trail = Trail.find(params[:id])
   end
@@ -16,7 +21,6 @@ class TrailsController < ApplicationController
     @trail.update(trail_params)
 
     @trail.save
-
     redirect_to "/trails/#{@trail.id}"
   end
 

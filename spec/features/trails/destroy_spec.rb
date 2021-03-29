@@ -5,7 +5,9 @@ RSpec.describe 'As a Visitor', type: :feature do
     describe 'next to every trail, I see a link to delete that trail' do
       it 'can delete an trail when I click on a link' do
         @rmnp_office = Office.create(name: 'RMNP Office', capacity: 200, first_aid: true )
-        @bear_lake = @rmnp_office.trails.create(name: 'Bear Lake Loop', elevation: 20, dogs_allowed: false)
+        @bear_lake = @rmnp_office.trails.create(name: 'Bear Lake Loop', elevation: 20, dogs_allowed: true)
+        # @flattop_mountain = @rmnp_office.trails.create(name: 'Flattop Mountain', elevation: 2849, dogs_allowed: true)
+
 
         visit '/trails'
 

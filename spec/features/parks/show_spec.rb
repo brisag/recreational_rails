@@ -25,5 +25,12 @@ RSpec.describe "As a visitor", type: :feature do
       click_link "Update Park"
       expect(current_path).to eq("/parks/#{@grand_canyon.id}/edit")
     end
+
+    it "has a link to Delete Park" do
+      visit "/parks/#{@grand_canyon.id}"
+      expect(page).to have_link("Delete Park")
+      click_link "Delete Park"
+      expect(current_path).to eq("/parks")
+    end
   end
 end

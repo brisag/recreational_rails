@@ -21,5 +21,12 @@ RSpec.describe "As a visitor", type: :feature do
       click_link "Update BackCountry Office"
       expect(current_path).to eq("/offices/#{@rmnp_office.id}/edit")
     end
+
+    it "has a link to Delete Office" do
+      visit "/offices/#{@rmnp_office.id}"
+      expect(page).to have_link("Delete Office")
+      click_link "Delete Office"
+      expect(current_path).to eq("/offices")
+    end
   end
 end

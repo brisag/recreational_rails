@@ -14,3 +14,6 @@
 <p><%= link_to "View Trails", "/offices/#{@office.id}/trails" %></p>
 <br>
 <p><%= link_to "Update BackCountry Office", "/offices/#{@office.id}/edit" %></p>
+<br>
+
+<%= link_to "Delete Office", "/offices/#{@office.id}", method: :delete %>

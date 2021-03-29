@@ -11,3 +11,4 @@
 <p>Virtual: <%= @program.virtual %></p><br>
 
 <p><%= link_to "Update Program", "/programs/#{@program.id}/edit" %></p>
+<%= link_to "Delete Program", "/programs/#{@program.id}", method: :delete %>

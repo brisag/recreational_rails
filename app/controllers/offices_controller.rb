@@ -21,6 +21,11 @@ class OfficesController < ApplicationController
       redirect_to '/offices'
   end
 
+  def destroy
+    Office.destroy(params[:id])
+    redirect_to "/offices"
+  end
+
   def edit
     @office = Office.find(params[:id])
   end
@@ -33,8 +38,8 @@ class OfficesController < ApplicationController
     redirect_to "/offices/#{office.id}"
   end
 
-  private
 
+  private
   def office_params
     params.permit(:name, :capacity, :first_aid)
   end

@@ -14,8 +14,9 @@
   <p>Permit Required: <%= park.permit_required %></p>
   <p>Created At: <%= park.created_at%></p>
   <%= link_to "Update Park", "/parks/#{park.id}/edit" %>
+  <%= link_to "Delete Park", "/parks/#{park.id}", method: :delete %>
 </section>
-
 <% end %>
+<br>
 
-<a href="/parks/new">New Park</a>
+<%= link_to "New Park", "/parks/new" %>

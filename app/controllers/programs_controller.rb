@@ -7,6 +7,11 @@ class ProgramsController < ApplicationController
     @program = Program.find(params[:id])
   end
 
+  def destroy
+    Program.destroy(params[:id])
+    redirect_to "/programs"
+  end
+
   def edit
     @program = Program.find(params[:id])
   end

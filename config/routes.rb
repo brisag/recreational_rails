@@ -7,11 +7,13 @@ Rails.application.routes.draw do
   get '/offices/new', to: 'offices#new'
   post '/offices', to: 'offices#create'
   get '/offices/:id', to: 'offices#show'
+  delete '/offices/:id', to: 'offices#destroy'
   get '/offices/:id/edit', to: 'offices#edit'
   patch '/offices/:id', to: 'offices#update'
 
   get '/trails', to: 'trails#index'
   get '/trails/:id', to: 'trails#show'
+  delete '/trails/:id', to: 'trails#destroy'
   get '/trails/:id/edit', to: 'trails#edit'
   patch '/trails/:id', to: 'trails#update'
 
@@ -19,11 +21,13 @@ Rails.application.routes.draw do
   get '/parks/new', to: 'parks#new'
   post '/parks', to: 'parks#create'
   get '/parks/:id', to: 'parks#show'
+  delete '/parks/:id', to: 'parks#destroy'
   get '/parks/:id/edit', to: 'parks#edit'
   patch '/parks/:id', to: 'parks#update'
 
   get '/programs', to: 'programs#index'
   get '/programs/:id', to: 'programs#show'
+  delete '/programs/:id', to: 'programs#destroy'
   get '/programs/:id/edit', to: 'programs#edit'
   patch '/programs/:id', to: 'programs#update'
 
@@ -38,5 +42,4 @@ Rails.application.routes.draw do
   get '/parks/:id/programs/new', to: 'park_programs#new'
   post '/parks/:id/programs', to: 'park_programs#create'
   get '/parks/:id/programs_abc', to: 'park_programs#index_abc'
-
 end

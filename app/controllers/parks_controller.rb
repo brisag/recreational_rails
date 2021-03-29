@@ -16,6 +16,11 @@ class ParksController < ApplicationController
     redirect_to '/parks'
   end
 
+  def destroy
+    Park.destroy(params[:id])
+    redirect_to "/parks"
+  end
+
   def edit
     @park = Park.find(params[:id])
   end

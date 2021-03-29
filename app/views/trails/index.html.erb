@@ -12,6 +12,7 @@
   <p>Elevation Gain (feet): <%= trail.elevation %></p>
   <p>Dogs Allowed? <%= trail.dogs_allowed %></p>
   <p><%= link_to 'Update', "/trails/#{trail.id}/edit" %></p>
+  <p><%= link_to 'Delete Trail', "/trails/#{trail.id}", method: :delete %></p>
 </section>
 
   <% end %>

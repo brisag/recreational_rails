@@ -13,7 +13,9 @@
   <p>First Aid Available: <%= office.first_aid %></p>
   <p>Created At: <%= office.created_at%></p>
   <%= link_to "Update Office", "/offices/#{office.id}/edit" %>
+  <%= link_to "Delete Office", "/offices/#{office.id}", method: :delete %>
 </section>
 <% end %>
+<br>
 
-<a href="/offices/new">New BackCountry Office</a>
+<%= link_to "New BackCountry Office", "/offices/new"%>

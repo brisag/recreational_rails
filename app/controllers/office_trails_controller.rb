@@ -1,10 +1,16 @@
 class OfficeTrailsController < ApplicationController
   def index
     @office = Office.find(params[:id])
-  end
-
-  def index_abc
-    @office = Office.find(params[:id])
+    # require "pry"; binding.pry
+    if params[:alphabet] == "abc_trails"
+      @trails = @office.abc_name
+    else
+      @trails = @office.trails
+    # elsif params[:sort] == "threshold"
+    #   @trails = @office.abc_name
+    # else
+    #   @artists = Artist.all
+    end
   end
 
   def new

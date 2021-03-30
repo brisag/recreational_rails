@@ -6,8 +6,8 @@
 </header>
 
 <h1><%= link_to "#{@office.name}", "/offices/#{@office.id}" %>'s Trails</h1>
-<p><%= link_to "Sort Alphabetically", "/offices/#{@office.id}/trails_abc" %></p>
-<% @office.trails.each do |trail| %>
+<p><%= link_to "Sort Alphabetically", "/offices/#{@office.id}/trails?alphabet=abc_trails" %></p>
+<% @trails.each do |trail| %>
 <h3>Trail Name: <%= "#{trail.name}" %></h3>
 <p>Elevation: <%= trail.elevation %></p>
   <p>Dogs Allowed? <%= trail.dogs_allowed %></p>

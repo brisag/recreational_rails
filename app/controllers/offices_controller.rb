@@ -12,13 +12,9 @@ class OfficesController < ApplicationController
 
   def create
     office = Office.new(office_params)
-      # name: params[:office][:name],
-      # capacity: params[:office][:capacity],
-      # first_aid: params[:office][:first_aid]
-      # })
 
-      office.save
-      redirect_to '/offices'
+    office.save
+    redirect_to '/offices'
   end
 
   def destroy
@@ -37,7 +33,6 @@ class OfficesController < ApplicationController
     office.save
     redirect_to "/offices/#{office.id}"
   end
-
 
   private
   def office_params

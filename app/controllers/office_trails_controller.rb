@@ -1,6 +1,11 @@
 class OfficeTrailsController < ApplicationController
   def index
     @office = Office.find(params[:id])
+    if params[:sort]
+      @trails = Trail.order(name: params[:sort])
+    else
+      @trails = Trail.all
+    end
   end
 
   def index_abc
@@ -18,7 +23,6 @@ class OfficeTrailsController < ApplicationController
   end
 
   private
-
   def trail_params
     params.permit(:name, :elevation, :dogs_allowed)
   end

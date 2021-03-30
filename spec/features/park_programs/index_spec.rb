@@ -30,5 +30,27 @@ RSpec.describe "As a visitor" do
       click_link "Create Program"
       expect(current_path).to eq("/parks/#{@grand_canyon.id}/programs/new")
     end
+
+    it "shows a link to sort programs in abc" do
+      expect(page).to have_link("Sort Alphabetically")
+
+      click_link "Sort Alphabetically"
+
+      expect(@fishing.name).to appear_before(@rafting.name)
+
+    end
+
+    it "i see a form that allows me to input a number value and filter by greater than" do
+      expect(page).to have_content("Find programs with Participants greater than:")
+
+      fill_in "Find programs with Participants greater than:", with: "20"
+
+      click_on "Search"
+
+      expect(current_path).to eq("/parks/#{@grand_canyon.id}/programs")
+
+      expect(page).to have_content(@fishing.name)
+      expect(page).to_not have_content(@rafting.name)
+    end
   end
 end

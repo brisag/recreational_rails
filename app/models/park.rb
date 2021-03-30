@@ -9,7 +9,7 @@ class Park < ApplicationRecord
     programs.count
   end
 
-  def order_programs_abc
+  def abc_name
     programs.order(:name)
   end
 end

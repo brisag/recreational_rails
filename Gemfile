@@ -41,11 +41,9 @@ group :development, :test do
   gem 'pry'
   gem 'rspec-rails', '~> 4.0.1'
   gem 'capybara'
-  # Save and open page
   gem 'launchy'
   gem 'simplecov'
   gem 'shoulda-matchers', '~> 3.1'
-  # Check page elements are in the expected order
   gem 'orderly'
 end
 

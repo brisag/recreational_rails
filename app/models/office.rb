@@ -12,4 +12,8 @@ class Office < ApplicationRecord
   def abc_name
     trails.order(:name)
   end
+
+  def elevation_filter(number)
+    trails.where('elevation > ?', number)
+  end
 end

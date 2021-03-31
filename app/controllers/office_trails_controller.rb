@@ -11,7 +11,6 @@ class OfficeTrailsController < ApplicationController
     end
   end
 
-
   def new
     @office = Office.find(params[:id])
   end
@@ -23,7 +22,6 @@ class OfficeTrailsController < ApplicationController
   end
 
   private
-
   def trail_params
     params.permit(:name, :elevation, :dogs_allowed)
   end

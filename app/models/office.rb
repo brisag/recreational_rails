@@ -17,4 +17,12 @@ class Office < ApplicationRecord
   def elevation_filter(number)
     trails.where('elevation > ?', number)
   end
+
+  def self.search_offices(input)
+    where(name: input)
+  end
+
+  def self.partial_search(input)
+    where("name ILIKE ?", "%input%")
+  end
 end

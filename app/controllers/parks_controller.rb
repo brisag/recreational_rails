@@ -1,6 +1,12 @@
 class ParksController < ApplicationController
   def index
-    @parks = Park.order_created_at
+    if params[:search]
+      @parks = Park.search_parks(params[:search])
+    # elsif params[:search]
+    #     @parks = Park.partial_search(params[:search])
+    else
+      @parks = Park.order_created_at
+    end
   end
 
   def show
@@ -34,7 +40,6 @@ class ParksController < ApplicationController
   end
 
   private
-
   def park_params
     params.permit(:name, :capacity, :permit_required)
   end

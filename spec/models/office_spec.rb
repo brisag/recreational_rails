@@ -27,6 +27,13 @@ describe Office, type: :model do
         expect(Office.order_created_at).to eq(expected)
       end
     end
+
+    describe '::search_offices' do
+      it "will search for an exact office name match" do
+
+        expect(Office.search_offices("Zion Office").to_a).to eq([@zion_office])
+      end
+    end
   end
 
   describe 'instance methods' do

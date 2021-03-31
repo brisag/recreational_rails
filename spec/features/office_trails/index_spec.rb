@@ -10,7 +10,6 @@ RSpec.describe "As a visitor" do
     end
 
     it "I see each trail that is associated with that office with each trail's attributes" do
-      # visit "/offices/#{@rmnp_office.id}/trails"
       expect(page).to have_link("#{@rmnp_office.name}")
 
       expect(page).to have_content(@bear_lake.name)
@@ -26,6 +25,26 @@ RSpec.describe "As a visitor" do
       expect(page).to have_link("Create Trail")
       click_link "Create Trail"
       expect(current_path).to eq("/offices/#{@rmnp_office.id}/trails/new")
-    end 
+    end
+
+  it "shows a link to sort trails in abc" do
+      expect(page).to have_link("Sort Alphabetically")
+
+      click_link "Sort Alphabetically"
+
+      expect(@bear_lake.name).to appear_before(@dream_lake.name)
+    end
+
+    it "i see a form that allows me to input a number value and filter by greater than" do
+      expect(page).to have_content("Find trails by elevation greater than:")
+
+      fill_in "Find trails by elevation greater than:", with: "100"
+
+      click_on "Search"
+      expect(current_path).to eq("/offices/#{@rmnp_office.id}/trails")
+
+      expect(page).to have_content(@dream_lake.name)
+      expect(page).to_not have_content(@bear_lake.name)
+    end
   end
 end

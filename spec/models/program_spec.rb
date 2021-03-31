@@ -12,6 +12,11 @@ describe Program, type: :model do
     it { should belong_to :park }
   end
 
+  describe 'validations' do
+    it {should validate_presence_of :name}
+    it {should validate_presence_of :num_of_participants}
+  end
+
   describe 'class methods' do
     describe '::true_virtual_records' do
       it 'only shows program if true_virtual_records is true' do

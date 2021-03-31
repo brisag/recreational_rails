@@ -6,6 +6,11 @@
 </header>
 
 <h1><%= link_to "#{@office.name}", "/offices/#{@office.id}" %>'s Trails</h1>
+
+<%= form_with url: "/offices/#{@office.id}/trails", method: :get, local: true do |form|%>
+<p><%= form.label :elevation, "Find trails by elevation greater than:" %> <%= form.text_field :elevation %>  <%= form.submit "Search" %> </p>
+<% end %>
+
 <p><%= link_to "Sort Alphabetically", "/offices/#{@office.id}/trails?alphabet=abc_trails" %></p>
 <% @trails.each do |trail| %>
 <h3>Trail Name: <%= "#{trail.name}" %></h3>

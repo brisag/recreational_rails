@@ -14,6 +14,12 @@ describe Park, type: :model do
     it { should have_many :programs }
   end
 
+  describe 'validations' do
+    it {should validate_presence_of(:name)}
+    it {should validate_presence_of(:capacity)}
+  end
+
+
   describe 'class methods' do
     describe '::order_created_at' do
       it 'will list records in order of created_at' do
@@ -31,10 +37,17 @@ describe Park, type: :model do
       end
     end
 
+    describe '#participant_filter' do
+      it "filters by number greater than" do
+
+        expect(@grand_canyon.participant_filter(50).to_a).to eq([@fishing])
+      end
+    end
+
     describe '#order_programs_abc' do
       it 'will list programs in order of name' do
         expected = [@hiking, @fishing, @rafting]
-        expect(@grand_canyon.order_programs_abc).to eq(expected)
+        expect(@grand_canyon.abc_name).to eq(expected)
       end
     end
   end

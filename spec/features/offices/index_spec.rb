@@ -78,6 +78,7 @@ RSpec.describe "As a visitor,", type: :feature do
 
       expect(current_path).to eq("/offices")
       expect(@moab_office.name).to appear_before(@zion_office.name)
+    end 
 
       it "under each office I see the number of associated trails" do
       visit "/offices"

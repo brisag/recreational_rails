@@ -12,7 +12,7 @@ RSpec.describe "As a visitor", type: :feature do
       @sand_boarding = @sand_dunes.programs.create!(name: 'Sandboard', num_of_participants: 6, virtual: false)
       @hot_springs = @sand_dunes.programs.create!(name: 'Hot Spring Nights', num_of_participants: 12, virtual: false)
       @conspiracies = @crater_lake.programs.create!(name: 'What Crater?', num_of_participants: 6, virtual: false)
-      
+
       visit '/parks'
     end
 
@@ -68,7 +68,8 @@ RSpec.describe "As a visitor", type: :feature do
       expect(current_path).to eq("/parks")
 
       expect(@grand_canyon.name).to appear_before(@crater_lake.name)
-      
+    end
+
     it "under each park I see the number of associated programs" do
       expect(page).to have_content("Number of programs offered: #{@grand_canyon.count_programs}")
       expect(@grand_canyon.count_programs).to eq(3)

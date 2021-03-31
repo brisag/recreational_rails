@@ -10,6 +10,7 @@ describe Park, type: :model do
     @rafting = @grand_canyon.programs.create!(name: 'Raft the Waves', num_of_participants: 8, virtual: false)
     @hiking = @grand_canyon.programs.create!(name: 'Grand Descent', num_of_participants: 30, virtual: false)
     @sand_boarding = @sand_dunes.programs.create!(name: 'Sandboard', num_of_participants: 6, virtual: false)
+    @hot_springs = @sand_dunes.programs.create!(name: 'Hot Spring Soak', num_of_participants: 10, virtual: false)
     @conspiracies = @crater_lake.programs.create!(name: 'What Crater?', num_of_participants: 6, virtual: false)
   end
   describe 'relationships' do

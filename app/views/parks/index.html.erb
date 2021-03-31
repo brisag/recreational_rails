@@ -11,12 +11,16 @@
   <%= form.text_field :search %> <%= form.submit "Search" %>
 <% end %>
 
+<p><%= link_to "Sort by Parks with the most programs to least", "/parks?sort=num_of_programs" %></p>
+
+
 <% @parks.each do |park| %>
 <section id = "park-<%= park.id %>">
   <h2><%= link_to "#{park.name}", "/parks/#{park.id}" %></h2>
   <p>Capacity: <%= park.capacity %></p>
   <p>Permit Required: <%= park.permit_required %></p>
   <p>Created At: <%= park.created_at%></p>
+  <p>Number of programs offered: <%= park.count_programs %></p>
   <%= link_to "Update Park", "/parks/#{park.id}/edit" %>
   <%= link_to "Delete Park", "/parks/#{park.id}", method: :delete %>
 </section>

@@ -13,6 +13,7 @@ RSpec.describe "As a visitor,", type: :feature do
       @park_avenue = @moab_office.trails.create(name: 'Park Avenue', elevation: 320, dogs_allowed: true)
       @double_arch = @moab_office.trails.create(name: 'Double Arch', elevation: 0, dogs_allowed: true)
       @weeping_rock = @zion_office.trails.create(name: 'Weeping Rock', elevation: 98, dogs_allowed: true)
+
     end
 
     it "Then I see the name of each office record in the system" do
@@ -30,7 +31,7 @@ RSpec.describe "As a visitor,", type: :feature do
       expect(current_path).to eq("/offices/new")
     end
 
-    it "Next to every park, I see a link to edit park " do
+    it "next to every office, I see a link to edit office" do
       visit "/offices"
 
       within("#office-#{@rmnp_office.id}") do
@@ -77,6 +78,16 @@ RSpec.describe "As a visitor,", type: :feature do
 
       expect(current_path).to eq("/offices")
       expect(@moab_office.name).to appear_before(@zion_office.name)
+
+      it "under each office I see the number of associated trails" do
+      visit "/offices"
+
+      expect(page).to have_content("Number of trails: #{@rmnp_office.count_trails}")
+      expect(@rmnp_office.count_trails).to eq(2)
+      expect(page).to have_content("Number of trails: #{@moab_office.count_trails}")
+      expect(@moab_office.count_trails).to eq(3)
+      expect(page).to have_content("Number of trails: #{@zion_office.count_trails}")
+      expect(@zion_office.count_trails).to eq(1)
     end
   end
 end

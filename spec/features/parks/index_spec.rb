@@ -12,11 +12,11 @@ RSpec.describe "As a visitor", type: :feature do
       @sand_boarding = @sand_dunes.programs.create!(name: 'Sandboard', num_of_participants: 6, virtual: false)
       @hot_springs = @sand_dunes.programs.create!(name: 'Hot Spring Nights', num_of_participants: 12, virtual: false)
       @conspiracies = @crater_lake.programs.create!(name: 'What Crater?', num_of_participants: 6, virtual: false)
+      
       visit '/parks'
     end
 
     it "Then I see the names of each office record in the system" do
-      # save_and_open_page
       expect(page).to have_content(@grand_canyon.name)
       expect(page).to have_content(@sand_dunes.name)
       expect(page).to have_content(@crater_lake.name)
@@ -68,6 +68,14 @@ RSpec.describe "As a visitor", type: :feature do
       expect(current_path).to eq("/parks")
 
       expect(@grand_canyon.name).to appear_before(@crater_lake.name)
+      
+    it "under each park I see the number of associated programs" do
+      expect(page).to have_content("Number of programs offered: #{@grand_canyon.count_programs}")
+      expect(@grand_canyon.count_programs).to eq(3)
+      expect(page).to have_content("Number of programs offered: #{@sand_dunes.count_programs}")
+      expect(@sand_dunes.count_programs).to eq(2)
+      expect(page).to have_content("Number of programs offered: #{@crater_lake.count_programs}")
+      expect(@crater_lake.count_programs).to eq(1)
     end
   end
 end

@@ -13,6 +13,7 @@ describe Park, type: :model do
     @hot_springs = @sand_dunes.programs.create!(name: 'Hot Spring Nights', num_of_participants: 12, virtual: false)
     @conspiracies = @crater_lake.programs.create!(name: 'What Crater?', num_of_participants: 6, virtual: false)
   end
+  
   describe 'relationships' do
     it { should have_many :programs }
   end

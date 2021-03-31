@@ -13,14 +13,14 @@ RSpec.describe "As a visitor", type: :feature do
 
       fill_in "Name", with: "Sunrise Yoga"
       fill_in "Num of participants", with: "27"
-      # check "Virtual Program?"
+      check "Virtual Program?"
 
       click_on "Create Program"
 
       expect(current_path).to eq("/parks/#{@grand_canyon.id}/programs")
       expect(page).to have_content("Sunrise Yoga")
       expect(page).to have_content(27)
-      # expect(page).to have_content(false)
+      expect(page).to have_content("Virtual Program? true")
     end
   end
 end

@@ -1,15 +1,13 @@
 class OfficeTrailsController < ApplicationController
   def index
     @office = Office.find(params[:id])
-    # require "pry"; binding.pry
-    if params[:alphabet] == "abc_trails"
+    if params[:elevation]
+      number = params[:elevation]
+      @trails = @office.elevation_filter(number)
+    elsif params[:alphabet] == "abc_trails"
       @trails = @office.abc_name
     else
       @trails = @office.trails
-    # elsif params[:sort] == "threshold"
-    #   @trails = @office.abc_name
-    # else
-    #   @artists = Artist.all
     end
   end
 
@@ -24,7 +22,6 @@ class OfficeTrailsController < ApplicationController
   end
 
   private
-
   def trail_params
     params.permit(:name, :elevation, :dogs_allowed)
   end

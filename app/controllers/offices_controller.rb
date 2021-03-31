@@ -1,6 +1,12 @@
 class OfficesController < ApplicationController
   def index
-    @offices = Office.order_created_at
+    if params[:search]
+      @offices = Office.search_offices(params[:search])
+    # elsif params[:search]
+    #     @offices = Office.partial_search(params[:search])
+    else
+      @offices = Office.order_created_at
+    end
   end
 
   def show

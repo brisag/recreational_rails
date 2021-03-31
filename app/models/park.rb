@@ -17,4 +17,12 @@ class Park < ApplicationRecord
   def participant_filter(number)
     programs.where('num_of_participants > ?', number)
   end
+
+  def self.search_parks(input)
+    where(name: input)
+  end
+
+  # def self.partial_search(input)
+  #   where("name ILIKE ?", "%input%")
+  # end
 end

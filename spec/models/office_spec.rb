@@ -6,8 +6,12 @@ describe Office, type: :model do
     @moab_office = Office.create!(name: 'Alamosa Office', capacity: 50, first_aid: false )
     @zion_office = Office.create!(name: 'Zion Office', capacity: 250, first_aid: true )
 
-    @dream_lake = @rmnp_office.trails.create(name: 'Dream Lake', elevation: 425, dogs_allowed: false)
-    @bear_lake = @rmnp_office.trails.create(name: 'Bear Lake Loop', elevation: 20, dogs_allowed: false)
+    @dream_lake = @rmnp_office.trails.create(name: 'Dream Lake', elevation: 425, dogs_allowed: true)
+    @bear_lake = @rmnp_office.trails.create(name: 'Bear Lake Loop', elevation: 20, dogs_allowed: true)
+    @delicate_arch = @moab_office.trails.create(name: 'Delicate Arch', elevation: 480, dogs_allowed: true)
+    @park_avenue = @moab_office.trails.create(name: 'Park Avenue', elevation: 320, dogs_allowed: true)
+    @double_arch = @moab_office.trails.create(name: 'Double Arch', elevation: 0, dogs_allowed: true)
+    @weeping_rock = @zion_office.trails.create(name: 'Weeping Rock', elevation: 98, dogs_allowed: true)
   end
 
   describe 'relationships' do
@@ -25,6 +29,14 @@ describe Office, type: :model do
 
         expected = [@zion_office, @moab_office, @rmnp_office]
         expect(Office.order_created_at).to eq(expected)
+      end
+    end
+
+    describe '::order_by_number_of_trails' do
+      it 'will list records from most to least trails' do
+
+        expected = [@moab_office, @rmnp_office, @zion_office]
+        expect(Office.order_by_number_of_trails.to_a).to eq(expected)
       end
     end
 

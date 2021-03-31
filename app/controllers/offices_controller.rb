@@ -1,9 +1,12 @@
 class OfficesController < ApplicationController
   def index
-    if params[:search]
+    if params[:sort] == "num_of_trails"
+      @offices = Office.order_by_number_of_trails
+    elsif params[:search]
       @offices = Office.search_offices(params[:search])
-    # elsif params[:search]
-    #     @offices = Office.partial_search(params[:search])
+      if @offices.empty?
+        @offices = Office.partial_office(params[:search])
+      end
     else
       @offices = Office.order_created_at
     end

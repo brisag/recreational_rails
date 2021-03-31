@@ -11,12 +11,17 @@
   <%= form.text_field :search %> <%= form.submit "Search" %>
 <% end %>
 
+<p><%= link_to "Sort by Offices with the most trails to least", "/offices?sort=num_of_trails" %></p>
+
+
 <% @offices.each do |office| %>
 <section id = "office-<%= office.id %>">
   <h2><%= link_to "#{office.name}", "/offices/#{office.id}" %></h2>
   <p>Capacity: <%= office.capacity %></p>
   <p>First Aid Available: <%= office.first_aid %></p>
   <p>Created At: <%= office.created_at%></p>
+  <p>Number of trails: <%= office.count_trails %></p>
+
   <%= link_to "Update Office", "/offices/#{office.id}/edit" %>
   <%= link_to "Delete Office", "/offices/#{office.id}", method: :delete %>
 </section>

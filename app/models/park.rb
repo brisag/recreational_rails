@@ -12,8 +12,4 @@ class Park < ApplicationRecord
   def abc_name
     programs.order(:name)
   end
-
-  def participant_filter(number)
-    programs.where('num_of_participants > ?', number)
-  end
 end

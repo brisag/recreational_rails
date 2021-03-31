@@ -6,11 +6,6 @@
 </header>
 
 <h1><%= link_to "#{@park.name}", "parks/#{@park.id}" %>'s Programs</h1>
-
-<%= form_with url: "/parks/#{@park.id}/programs", method: :get, local: true do |form|%>
-<p><%= form.label :num_of_participants, "Find programs with Participants greater than:" %> <%= form.text_field :num_of_participants %>  <%= form.submit "Search" %> </p>
-<% end %>
-
 <p><%= link_to "Sort Alphabetically", "/parks/#{@park.id}/programs?alphabet=abc_programs" %></p>
 <% @programs.each do |program| %>
   <h3>Program Name: <%= program.name %></h3>

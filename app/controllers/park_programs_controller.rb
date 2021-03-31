@@ -1,14 +1,15 @@
 class ParkProgramsController < ApplicationController
   def index
     @park = Park.find(params[:id])
-    if params[:num_of_participants]
-      number = params[:num_of_participants]
-      @programs = @park.participant_filter(number)
-    elsif params[:alphabet] == "abc_programs"
+    if params[:alphabet] == "abc_programs"
       @programs = @park.abc_name
     else
       @programs = @park.programs
-    end
+    #park params[:sort] == "threshold"
+    #   @programs = @park.abc_name
+    # else
+    #   @artists = Artist.all
+    end 
   end
 
   def new

@@ -5,10 +5,6 @@
   </nav>
 </header>
 
-
-
-
-
 <h1><%= link_to "#{@office.name}", "/offices/#{@office.id}" %>'s Trails</h1>
 
 <%= form_with url: "/offices/#{@office.id}/trails", method: :get, local: true do |form|%>

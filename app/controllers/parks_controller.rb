@@ -1,9 +1,12 @@
 class ParksController < ApplicationController
   def index
-    if params[:search]
+    if params[:sort] == "num_of_programs"
+      @parks = Park.order_by_number_of_programs
+    elsif params[:search]
       @parks = Park.search_parks(params[:search])
-    # elsif params[:search]
-    #     @parks = Park.partial_search(params[:search])
+      if @parks.empty?
+        @parks = Park.partial_park(params[:search])
+      end
     else
       @parks = Park.order_created_at
     end

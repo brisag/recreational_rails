@@ -9,7 +9,6 @@ RSpec.describe "As a visitor", type: :feature do
     end
 
     it "Then I see the office with that id including the its attributes" do
-      # save_and_open_page
 
       expect(page).to have_content(@rmnp_office.name)
       expect(page).to have_content(@rmnp_office.capacity)

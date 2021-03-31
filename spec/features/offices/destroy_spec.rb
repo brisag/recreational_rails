@@ -8,7 +8,6 @@ RSpec.describe 'As a Visitor', type: :feature do
 
         visit '/offices'
 
-        # save_and_open_page
         click_link 'Delete Office'
 
         expect(current_path).to eq('/offices')

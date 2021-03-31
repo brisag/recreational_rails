@@ -1,7 +1,6 @@
 class OfficeTrailsController < ApplicationController
   def index
     @office = Office.find(params[:id])
-    # require "pry"; binding.pry
     if params[:elevation]
       number = params[:elevation]
       @trails = @office.elevation_filter(number)

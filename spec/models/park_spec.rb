@@ -10,9 +10,10 @@ describe Park, type: :model do
     @rafting = @grand_canyon.programs.create!(name: 'Raft the Waves', num_of_participants: 8, virtual: false)
     @hiking = @grand_canyon.programs.create!(name: 'Grand Descent', num_of_participants: 30, virtual: false)
     @sand_boarding = @sand_dunes.programs.create!(name: 'Sandboard', num_of_participants: 6, virtual: false)
-    @hot_springs = @sand_dunes.programs.create!(name: 'Hot Spring Soak', num_of_participants: 10, virtual: false)
+    @hot_springs = @sand_dunes.programs.create!(name: 'Hot Spring Nights', num_of_participants: 12, virtual: false)
     @conspiracies = @crater_lake.programs.create!(name: 'What Crater?', num_of_participants: 6, virtual: false)
   end
+  
   describe 'relationships' do
     it { should have_many :programs }
   end
@@ -44,6 +45,13 @@ describe Park, type: :model do
       it "will search for an exact park name match" do
 
         expect(Park.search_parks("Crater Lake").to_a).to eq([@crater_lake])
+      end
+    end
+
+    describe '::partial_park' do
+      it "will search for the partial match" do
+
+        expect(Park.partial_park("Sand").to_a).to eq([@sand_dunes])
       end
     end
   end

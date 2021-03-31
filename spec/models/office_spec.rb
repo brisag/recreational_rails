@@ -46,6 +46,13 @@ describe Office, type: :model do
         expect(Office.search_offices("Zion Office").to_a).to eq([@zion_office])
       end
     end
+
+    describe '::partial_office' do
+      it "will search for the partial match" do
+
+        expect(Office.partial_office("Zio").to_a).to eq([@zion_office])
+      end
+    end
   end
 
   describe 'instance methods' do

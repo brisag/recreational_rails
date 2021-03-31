@@ -1,6 +1,5 @@
 class Office < ApplicationRecord
   validates :name, :capacity, presence: true
-  validates :first_aid, inclusion: [true, false]
   has_many :trails, dependent: :delete_all
 
   def self.order_created_at
@@ -13,5 +12,9 @@ class Office < ApplicationRecord
 
   def abc_name
     trails.order(:name)
+  end
+
+  def elevation_filter(number)
+    trails.where('elevation > ?', number)
   end
 end

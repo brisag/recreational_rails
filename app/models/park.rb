@@ -1,4 +1,5 @@
 class Park < ApplicationRecord
+  validates :name, :capacity, presence: true
   has_many :programs, dependent: :delete_all
 
   def self.order_created_at
@@ -11,5 +12,9 @@ class Park < ApplicationRecord
 
   def abc_name
     programs.order(:name)
+  end
+
+  def participant_filter(number)
+    programs.where('num_of_participants > ?', number)
   end
 end

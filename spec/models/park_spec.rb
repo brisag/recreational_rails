@@ -9,6 +9,8 @@ describe Park, type: :model do
     @fishing = @grand_canyon.programs.create!(name: 'Grand Fishing Online', num_of_participants: 100, virtual: true)
     @rafting = @grand_canyon.programs.create!(name: 'Raft the Waves', num_of_participants: 8, virtual: false)
     @hiking = @grand_canyon.programs.create!(name: 'Grand Descent', num_of_participants: 30, virtual: false)
+    @sand_boarding = @sand_dunes.programs.create!(name: 'Sandboard', num_of_participants: 6, virtual: false)
+    @conspiracies = @crater_lake.programs.create!(name: 'What Crater?', num_of_participants: 6, virtual: false)
   end
   describe 'relationships' do
     it { should have_many :programs }
@@ -26,6 +28,14 @@ describe Park, type: :model do
 
         expected = [@crater_lake, @sand_dunes, @grand_canyon]
         expect(Park.order_created_at).to eq(expected)
+      end
+    end
+
+    describe '::order_by_number_of_programs' do
+      it 'will list records from most to least programs' do
+
+        expected = [@grand_canyon, @sand_dunes, @crater_lake]
+        expect(Park.order_by_number_of_programs.to_a).to eq(expected)
       end
     end
 

@@ -103,4 +103,4 @@ Created by
 
 ~ feel free to contact us ~
 
-![Image title](/images/park_program.jpg "Ranger led program")
+![Ranger leading program](/images/park_program.jpeg "Ranger led program")

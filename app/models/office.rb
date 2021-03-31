@@ -22,7 +22,13 @@ class Office < ApplicationRecord
     where(name: input)
   end
 
-  def self.partial_search(input)
-    where("name ILIKE ?", "%input%")
+  def self.partial_office(input)
+    where("name ILIKE ?", "%#{input}%")
+  end
+
+  def self.order_by_number_of_trails
+    joins(:trails)
+    .group(:id)
+    .order('count(trails.id) desc')
   end
 end

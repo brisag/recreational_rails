@@ -22,7 +22,13 @@ class Park < ApplicationRecord
     where(name: input)
   end
 
-  # def self.partial_search(input)
-  #   where("name ILIKE ?", "%input%")
-  # end
+  def self.partial_park(input)
+    where("name ILIKE ?", "%#{input}%")
+  end
+
+  def self.order_by_number_of_programs
+    joins(:programs)
+    .group(:id)
+    .order('count(programs.id) desc')
+  end
 end

@@ -11,6 +11,11 @@ describe Trail, type: :model do
     it { should belong_to :office }
   end
 
+  describe 'validations' do
+    it {should validate_presence_of :name}
+    it {should validate_presence_of :elevation}
+  end
+
   describe 'class methods' do
     describe '::true_dogs_allowed' do
       it 'only shows trail if dogs_allowed is true' do

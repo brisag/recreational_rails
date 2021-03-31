@@ -14,6 +14,11 @@ describe Office, type: :model do
     it { should have_many :trails }
   end
 
+  describe 'validations' do
+    it {should validate_presence_of :name}
+    it {should validate_presence_of :capacity}
+  end
+
   describe 'class methods' do
     describe '::order_created_at' do
       it 'will list records in order of created_at' do
@@ -29,13 +34,21 @@ describe Office, type: :model do
       it 'will count trails for an office' do
 
         expect(@rmnp_office.count_trails).to eq(2)
-      end 
+      end
     end
+
+    describe '#elevation_filter' do
+      it "filters by number greater than" do
+
+        expect(@rmnp_office.elevation_filter(400).to_a).to eq([@dream_lake])
+      end
+    end
+
 
     describe '#order_abc' do
       it 'will list trails in order of name' do
         expected = [@bear_lake, @dream_lake]
-        expect(@rmnp_office.order_abc).to eq(expected)
+        expect(@rmnp_office.abc_name).to eq(expected)
       end
     end
   end
